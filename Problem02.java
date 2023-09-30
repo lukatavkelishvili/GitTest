@@ -15,7 +15,6 @@ public class Problem02 extends Karel{
 		for (int i = 0; i < 10; i++) {
 			putBeeper();
 		}
-		move();
 		
 		
 	}
