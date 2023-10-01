@@ -1,10 +1,11 @@
 import stanford.karel.Karel;
-import stanford.karel.SuperKarel;
 
-public class Problem03 extends SuperKarel {
+public class Problem03 extends Karel {
 	public void run(){
-		//jsksjsskskks
-		turnRight();
+		
+		while (frontIsClear()) {
+			move();
+		}
 	}
 }
 
