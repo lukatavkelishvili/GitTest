@@ -15,7 +15,7 @@ public class Problem06 extends Karel {
 		if (frontIsClear()) {
 			move();
 		}
-			turnRight();
+			;
 		}
 		
 		
