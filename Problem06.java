@@ -8,14 +8,14 @@ public class Problem06 extends Karel {
 			turnLeft();
 		if (frontIsClear()) {
 			move();
-		}
 			turnLeft();
+		}
 			lineWalk();
 			turnRight();
 		if (frontIsClear()) {
 			move();
+			turnRight();
 		}
-			;
 		}
 		
 		
