@@ -7,7 +7,13 @@ import stanford.karel.Karel;
 
 	public class Problem06 extends Karel {
 		public void run() {
-			
+			moveFirstPileToDestinationAndBackup();
+			moveSecondPileToDestinationAndBackup();
+			// moveToSecondPile
+			restoreBeepers();
+			// moveToFirstPile
+			restoreBeepers();
 		}
 	
 	}
+		
