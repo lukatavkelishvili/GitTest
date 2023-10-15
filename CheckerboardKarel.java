@@ -10,7 +10,9 @@
 import stanford.karel.*;
 
 public class CheckerboardKarel extends SuperKarel {
-	move();
+	public void run() {
+		move();
+	}
 	// You fill in this part
 
 }
