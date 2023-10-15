@@ -17,8 +17,8 @@ public class MidpointFindingKarel extends SuperKarel {
 		goToLeftUpperCorner(); //In the end Karel should be facing east.
 		while (rightIsClear()) {
 		moveOneForwardAndTwoDown();
-		putBeeper();
 		}
+		putBeeper();
 		
 	}
 
