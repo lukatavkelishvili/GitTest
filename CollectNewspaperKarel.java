@@ -13,8 +13,8 @@ import stanford.karel.*;
 public class CollectNewspaperKarel extends SuperKarel {
 	public void run() {
 		goToNewspaper();
-		pickBeeper();
-		backToStartingPosition();
+		pickBeeper();  // it is same to pick newspaper
+		backToStartingPosition();  //in the end, Karel should be facing east.
 	}
 
 	private void backToStartingPosition() {
