@@ -29,6 +29,9 @@ public class StoneMasonKarel extends SuperKarel {
 
 	private void repairTheColumn() {
 		turnLeft();
+		if (noBeepersPresent()) {
+			putBeeper();
+		}
 		while (frontIsClear()) {
 			move();
 			if (noBeepersPresent()) {
@@ -38,8 +41,9 @@ public class StoneMasonKarel extends SuperKarel {
 		turnAround();
 		while (frontIsClear()) {
 			move();
-			turnLeft();
+			
 		}
+		turnLeft();
 	}
 
 	
