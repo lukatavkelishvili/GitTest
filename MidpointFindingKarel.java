@@ -29,6 +29,7 @@ public class MidpointFindingKarel extends SuperKarel {
 		if (frontIsClear()) {
 			move();
 		}
+		turnLeft();
 		
 	}
 
