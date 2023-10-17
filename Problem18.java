@@ -7,9 +7,9 @@ public class Problem18 extends ConsoleProgram {
 		if(a > b) {
 			println(a);
 		}
-			else {
-				println(b);
-			}
+		else {
+			println(b);
+		}
 				
 			
 		}
