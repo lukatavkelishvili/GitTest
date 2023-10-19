@@ -17,6 +17,7 @@ public class Problem21 extends GraphicsProgram {
 		double x2 = getWidth();
 		double height = (double)getHeight() / (NUM_LINES - 1);
 		double y = i * height;
+		
 		GLine line = new GLine(x1, y, x2, y);
 		add(line);
 	}
