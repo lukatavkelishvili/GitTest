@@ -9,7 +9,7 @@ public class Problem20 extends ConsoleProgram {
 			int a = readInt("Enter number: ");
 			b += a;
 		}
-		
+		println("b" + b);
 	}
 
 }
