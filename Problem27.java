@@ -9,7 +9,11 @@ public class Problem27 extends ConsoleProgram {
 	}
 	
 	private int numberPower(int a, int b) {
-		
+		int pow = 0;
+		for (int i = 1; i <= b; i++) {
+			pow = a*a;
+		}
+		return pow;
 		
 		
 		
