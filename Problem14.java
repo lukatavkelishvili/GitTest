@@ -23,16 +23,23 @@ public class Problem14 extends GraphicsProgram {
 	private void drawFace() {
 		GRect face = new GRect(FACE_WIDTH, FACE_HEIGHT);
 		
-		double x = getWidth() / 2 - FACE_WIDTH / 2;
-		double y = getHeight() / 2 - FACE_HEIGHT / 2;
+		double x1 = getWidth() / 2 - FACE_WIDTH / 2;
+		double y1 = getHeight() / 2 - FACE_HEIGHT / 2;
 		
-		add(face, x, y);
+		add(face, x1, y1);
 		
 		
 	}
 
 	private void drawMouth() {
-		// TODO Auto-generated method stub
+		GRect mouth = new GRect(MOUTH_WIDTH, MOUTH_HEIGHT);
+		
+		double x2 = getWidth() / 2 - MOUTH_WIDTH / 2;
+		double y2 = getHeight() / 2 + FACE_HEIGHT / 2 - 2 * MOUTH_HEIGHT;
+		
+		add(mouth, x2, y2);
+		
+		
 		
 	}
 
