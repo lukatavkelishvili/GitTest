@@ -23,6 +23,9 @@ public class Problem14 extends GraphicsProgram {
 	private void drawFace() {
 		GRect face = new GRect(FACE_WIDTH, FACE_HEIGHT);
 		
+	    face.setFilled(true);
+	    
+		
 		double x1 = getWidth() / 2 - FACE_WIDTH / 2;
 		double y1 = getHeight() / 2 - FACE_HEIGHT / 2;
 		
