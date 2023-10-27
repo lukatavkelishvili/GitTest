@@ -2,10 +2,10 @@ import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
 public class Problem12 extends GraphicsProgram {
-	private static final int WINDOW_HEIGHT = 200;
-	private static final int WINDOW_WIDTH = 100;
-	private static final int BODY_HEIGHT = 600;
-	private static final int BODY_WIDTH = 1000;
+	private static final int WINDOW_HEIGHT = 100;
+	private static final int WINDOW_WIDTH = 50;
+	private static final int BODY_HEIGHT = 300;
+	private static final int BODY_WIDTH = 500;
 	public void run() {
 		drawBody();
 //		drawRoof();
