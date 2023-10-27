@@ -1,3 +1,4 @@
+import acm.graphics.GLine;
 import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
@@ -6,11 +7,13 @@ public class Problem12 extends GraphicsProgram {
 	private static final int WINDOW_WIDTH = 30;
 	private static final int BODY_HEIGHT = 200;
 	private static final int BODY_WIDTH = 300;
+	private static final int ROOF_HEIGHT = 100;
+	
 	public void run() {
 		drawBody();
-//		drawRoof();
-//		drawWindows();
-//		drawDoor();
+		drawRoof();
+		drawWindows();
+		drawDoor();
 		
 	}
 	private void drawDoor() {
@@ -22,7 +25,24 @@ public class Problem12 extends GraphicsProgram {
 		
 	}
 	private void drawRoof() {
-		// TODO Auto-generated method stub
+		double x1 = getWidth() / 2 - BODY_WIDTH / 2;
+		double y1 = getHeight() /2 - BODY_HEIGHT / 2;
+		double x2 = getWidth() / 2;
+		double y2 = getHeight() /2 - BODY_HEIGHT / 2 - ROOF_HEIGHT;
+		
+		GLine leftRoof = new GLine(x1, y1, x2, y2);
+		add(leftRoof);
+		
+		x1 = x2;
+		y1 = y2;
+		x2 = x1 + BODY_WIDTH / 2;
+		y2 = y1 - ROOF_HEIGHT;
+		
+		GLine rightRoof = new GLine(x1, y1, x2, y2);
+		add(rightRoof);
+		
+		
+		
 		
 	}
 	private void drawBody() {
