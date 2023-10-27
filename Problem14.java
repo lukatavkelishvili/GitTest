@@ -2,8 +2,8 @@ import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
 public class Problem14 extends GraphicsProgram {
-	private static final int FACE_WIDTH = 300;
-	private static final int FACE_HEIGHT = 500;
+	private static final int FACE_WIDTH = 150;
+	private static final int FACE_HEIGHT = 300;
 	private static final int MOUTH_WIDTH = 80;
 	private static final int MOUTH_HEIGHT = 30;
 	private static final int EYES_WIDTH = 80;
