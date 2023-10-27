@@ -2,10 +2,10 @@ import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
 public class Problem12 extends GraphicsProgram {
-	private static final int WINDOW_HEIGHT = 100;
-	private static final int WINDOW_WIDTH = 50;
-	private static final int BODY_HEIGHT = 300;
-	private static final int BODY_WIDTH = 500;
+	private static final int WINDOW_HEIGHT = 60;
+	private static final int WINDOW_WIDTH = 30;
+	private static final int BODY_HEIGHT = 200;
+	private static final int BODY_WIDTH = 300;
 	public void run() {
 		drawBody();
 //		drawRoof();
@@ -27,7 +27,7 @@ public class Problem12 extends GraphicsProgram {
 	}
 	private void drawBody() {
 		GRect walls = new GRect(BODY_WIDTH, BODY_HEIGHT);
-		add(walls, (getWidth() / 2) - (BODY_WIDTH / 2), (getHeight() / 2) - (BODY_HEIGHT / 2) );
+		add(walls, (getWidth() / 2) - (BODY_WIDTH / 2), (getHeight() / 2));
 		
 	}
 }
