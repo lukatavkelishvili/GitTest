@@ -26,9 +26,9 @@ public class Problem12 extends GraphicsProgram {
 	}
 	private void drawRoof() {
 		double x1 = getWidth() / 2 - BODY_WIDTH / 2;
-		double y1 = getHeight() /2 - BODY_HEIGHT / 2;
+		double y1 = getHeight() /2;
 		double x2 = getWidth() / 2;
-		double y2 = getHeight() /2 - BODY_HEIGHT / 2 - ROOF_HEIGHT;
+		double y2 = getHeight() /2 - ROOF_HEIGHT;
 		
 		GLine leftRoof = new GLine(x1, y1, x2, y2);
 		add(leftRoof);
