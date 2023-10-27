@@ -23,7 +23,7 @@ public class Problem12 extends GraphicsProgram {
 	private void drawWindows() {
 		GRect windows = new GRect(WINDOW_WIDTH, WINDOW_HEIGHT);
 		
-		//add(windows, getWidth() / 2 - BODY_WIDTH / 3 - WINDOW_WIDTH, getHeight() / 2 + BODY_HEIGHT / 3);
+		add(windows, getWidth() / 2 - BODY_WIDTH / 3 - WINDOW_WIDTH, getHeight() / 2 + BODY_HEIGHT / 3);
 		add(windows, getWidth() / 2 + BODY_WIDTH / 3, getHeight() / 2 + BODY_HEIGHT / 3);
 		
 	}
