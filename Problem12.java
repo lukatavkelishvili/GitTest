@@ -36,7 +36,7 @@ public class Problem12 extends GraphicsProgram {
 		x1 = x2;
 		y1 = y2;
 		x2 = x1 + BODY_WIDTH / 2;
-		y2 = y1 - ROOF_HEIGHT;
+		y2 = getHeight() / 2;
 		
 		GLine rightRoof = new GLine(x1, y1, x2, y2);
 		add(rightRoof);
