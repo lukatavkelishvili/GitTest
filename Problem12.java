@@ -8,6 +8,8 @@ public class Problem12 extends GraphicsProgram {
 	private static final int BODY_HEIGHT = 200;
 	private static final int BODY_WIDTH = 300;
 	private static final int ROOF_HEIGHT = 100;
+	private static final int DOOR_HEIGHT = 60;
+	private static final int DOOR_WIDTH = 30;
 	
 	public void run() {
 		drawBody();
@@ -17,7 +19,7 @@ public class Problem12 extends GraphicsProgram {
 		
 	}
 	private void drawDoor() {
-		// TODO Auto-generated method stub
+		GRect door = new GRect(DOOR_WIDTH, DOOR_HEIGHT, getWidth() / 2 - DOOR_WIDTH / 2, getHeight() / 2 + BODY_HEIGHT - DOOR_HEIGHT);
 		
 	}
 	private void drawWindows() {
