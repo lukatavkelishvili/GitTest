@@ -19,7 +19,7 @@ public class Problem12 extends GraphicsProgram {
 		
 	}
 	private void drawDoor() {
-		GRect door = new GRect(DOOR_WIDTH, DOOR_HEIGHT, getWidth() / 2 - DOOR_WIDTH / 2, getHeight() / 2 + BODY_HEIGHT - DOOR_HEIGHT);
+		GRect door = new GRect(getWidth() / 2 - DOOR_WIDTH / 2, getHeight() / 2 + BODY_HEIGHT - DOOR_HEIGHT, DOOR_WIDTH, DOOR_HEIGHT);
 		add(door);
 	}
 	private void drawWindows() {
