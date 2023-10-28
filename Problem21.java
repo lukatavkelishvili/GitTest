@@ -1,29 +1,17 @@
-import acm.graphics.GLine;
 import acm.program.GraphicsProgram;
 
 public class Problem21 extends GraphicsProgram {
 	private static final int NUM_LINES = 11;
 	public void run() {
-		for (int i = 0; i < NUM_LINES; i++) {
-			addVerticalLine(i);
-			addHorizontalLine(i);
-		}
-		
-		
+		drawHorizontalLines();
+		drawVerticalLines();
 	}
-	private void addHorizontalLine(int i) {
-	
-		double x1 = 0;
-		double x2 = getWidth();
-		double height = (double)getHeight() / (NUM_LINES - 1);
-		double y = i * height;
-		
-		GLine line = new GLine(x1, y, x2, y);
-		add(line);
-	}
-	private void addVerticalLine(int i) {
+	private void drawVerticalLines() {
 		// TODO Auto-generated method stub
 		
 	}
-
+	private void drawHorizontalLines() {
+		// TODO Auto-generated method stub
+		
+	}
 }
