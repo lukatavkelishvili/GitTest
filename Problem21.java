@@ -1,3 +1,4 @@
+import acm.graphics.GLine;
 import acm.program.GraphicsProgram;
 
 public class Problem21 extends GraphicsProgram {
@@ -7,7 +8,12 @@ public class Problem21 extends GraphicsProgram {
 		drawVerticalLines();
 	}
 	private void drawVerticalLines() {
-		// TODO Auto-generated method stub
+		double n = getWidth() / 10;
+		for (int x = 0; x < 11; x += n) {
+			GLine vLine = new GLine(x, 0, x, getHeight());
+			add(vLine);
+		}
+		
 		
 	}
 	private void drawHorizontalLines() {
