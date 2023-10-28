@@ -19,7 +19,7 @@ public class Problem21 extends GraphicsProgram {
 	private void drawHorizontalLines() {
 		double n = getHeight() / 10;
 		for (int y = 0; y <= getHeight(); y += n) {
-			GLine hLine = new GLine(y, 0, y, getWidth());
+			GLine hLine = new GLine(0, y, getWidth(), y);
 			add(hLine);
 		}
 		
