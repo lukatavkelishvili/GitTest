@@ -7,7 +7,7 @@ public class Problem21 extends GraphicsProgram {
 		drawVerticalLines();
 	}
 	private void drawVerticalLines() {
-		double n = (double)getWidth() / 10;
+		double n = getWidth() / 10;
 		for (int x = 0; x <= getWidth(); x += n) {
 			GLine vLine = new GLine(x, 0, x, getHeight());
 			add(vLine);
