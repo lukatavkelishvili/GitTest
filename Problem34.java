@@ -17,7 +17,8 @@ public class Problem34 extends GraphicsProgram {
 //		RandomGenerator rgen = RandomGenerator.getInstance();
 //		
 //		boolean heads = rgen.nextBoolean(0.66);
-		addRandomCircle();
+		for (int i = 0; i < 1000; i++) {
+			addRandomCircle();
 		
 		
 	}
