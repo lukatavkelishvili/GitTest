@@ -10,8 +10,7 @@ public class Problem15 extends ConsoleProgram {
 //	}
 		int a = readInt ("Enter first number: ");
 		int b = readInt ("Enter second number: ");
-		int c = Math.max(a, b);
-		
-		println("Higher number is: " + c);
+		double c = (a + b) / 2;		
+		println("Average number is: " + c);
 	}
 }
