@@ -17,7 +17,7 @@ public class Problem23 extends ConsoleProgram {
 		
 		int a = readInt ("Enter integral number: ");
 		int b = 0;
-		for ( int i = 0; i < a; i++) {
+		for ( int i = 1; i <= a; i++) {
 			b += i;
 			
 		}
