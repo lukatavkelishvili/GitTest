@@ -12,6 +12,6 @@ public class Problem15 extends ConsoleProgram {
 		int b = readInt ("Enter second number: ");
 		int c = Math.max(a, b);
 		
-		println(c);
+		println("Higher number is: " + c);
 	}
 }
