@@ -10,7 +10,7 @@ public class Problem15 extends ConsoleProgram {
 //	}
 		int a = readInt ("Enter first number: ");
 		int b = readInt ("Enter second number: ");
-		double c = (a + b) / 2;		
+		double c = (double)(a + b) / 2;		
 		println("Average number is: " + c);
 	}
 }
