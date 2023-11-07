@@ -6,7 +6,7 @@ public class Problem39 extends GraphicsProgram {
 	private static final int CIRCLE_DIAMETER = 50;
 	public void run() {
 		GOval circle = new GOval(CIRCLE_DIAMETER, CIRCLE_DIAMETER);
-		add(circle, 0, getHeight() / 2);
+		add(circle, 0, getHeight() / 2 + CIRCLE_DIAMETER / 2);
 		
 		int vx = 5;
 		int vy = 0;
