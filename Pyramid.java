@@ -31,6 +31,7 @@ public class Pyramid extends GraphicsProgram {
 		double y = getHeight() - BRICK_HEIGHT;
 		for (int i = 0; i < BRICKS_IN_BASE; i++) {
 			add(brick, x, y);
+			pause(1000);
 			x += BRICK_WIDTH;
 			
 			
