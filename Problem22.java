@@ -7,7 +7,8 @@ public class Problem22 extends GraphicsProgram {
 		double squareLength = Math.min(getWidth() / NUM_CELLS, getHeight() / NUM_CELLS);
 		double x = 0;
 		double y = 0;
-		for (int i = 0;i < NUM_CELLS; i++) {
+		for(int j = 0; j < NUM_CELLS; j++) {
+			for (int i = 0;i < NUM_CELLS; i++) {
 			GRect square = new GRect(squareLength, squareLength);
 			
 			add(square, x, y);
@@ -15,7 +16,8 @@ public class Problem22 extends GraphicsProgram {
 			x += squareLength;
 			
 		}
-		
+		x += squareLength;
+		y += squareLength;
 	}
 
 }
