@@ -18,6 +18,8 @@ public class Problem22 extends GraphicsProgram {
 		}
 		x += squareLength;
 		y += squareLength;
-	}
+		}
 
+	}
+	
 }
