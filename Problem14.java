@@ -56,8 +56,22 @@ public class Problem14 extends GraphicsProgram {
 	}
 
 	private void drawEyes() {
-		// TODO Auto-generated method stub
+		double x;
+		double y = getHeight() / 2 - FACE_HEIGHT / 2 + 50;
 		
+		for (int i = 0;i < 2;i++) {
+			if (i == 0) {
+				x = getWidth() / 2 - FACE_WIDTH / 2 + 30;
+			}else {
+				x = getWidth() / 2 + FACE_WIDTH / 2 - 30;
+			}
+			GRect eyes = new GRect(EYES_WIDTH, EYES_HEIGHT);
+			
+			eyes.setFilled(true);
+			eyes.setFillColor(Color.WHITE);
+			
+			add(eyes, x, y);
+		}
 	}
 
 }
