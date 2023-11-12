@@ -13,7 +13,7 @@ public class Problem22 extends GraphicsProgram {
 //			if ((i + j) % 2 == 1) {
 //				square.setFilled(true);
 			square.setFilled((i + j) % 2 == 1); 
-			}
+//			}
 			
 			add(square, x, y);
 			
