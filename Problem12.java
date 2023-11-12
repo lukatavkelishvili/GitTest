@@ -33,7 +33,7 @@ public class Problem12 extends GraphicsProgram {
 				x = getWidth() / 2 + BODY_WIDTH / 3;
 			}
 			GRect windows = new GRect(WINDOW_WIDTH, WINDOW_HEIGHT);
-			add(windows);
+			add(windows, x, y);
 		}
 	}
 	private void drawRoof() {
