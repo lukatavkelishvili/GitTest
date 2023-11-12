@@ -69,12 +69,13 @@ public class Breakout extends GraphicsProgram {
 				
 				GRect brick = new GRect(BRICK_WIDTH, BRICK_HEIGHT);
 				brick.setFilled(true);
-				if (i == 0) {
-					brick.setFillColor(Color.RED);
-				}
 				
 				add(brick, x, y);
 			}
+		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
+		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+		double x = WIDTH / 2 - PADDLE_WIDTH / 2;
+		add(paddle, x, y);
 		
 			
 		}
