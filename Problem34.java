@@ -20,6 +20,7 @@ public class Problem34 extends GraphicsProgram {
 		for (int i = 0; i < 1000; i++) {
 			addRandomCircle();
 		}
+	}
 	
 	private void addRandomCircle() {
 		int radius = rgen.nextInt(MIN_RADIUS, MAX_RADIUS);
