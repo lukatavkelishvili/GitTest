@@ -12,8 +12,8 @@ public class Problem22 extends GraphicsProgram {
 			GRect square = new GRect(squareLength, squareLength);
 //			if ((i + j) % 2 == 1) {
 //				square.setFilled(true);
-			square.setFilled((i + j) % 2 == 1); 
 //			}
+			square.setFilled((i + j) % 2 == 1); 
 			
 			add(square, x, y);
 			
