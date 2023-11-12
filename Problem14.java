@@ -45,6 +45,9 @@ public class Problem14 extends GraphicsProgram {
 		double x2 = getWidth() / 2 - MOUTH_WIDTH / 2;
 		double y2 = getHeight() / 2 + FACE_HEIGHT / 2 - 2 * MOUTH_HEIGHT;
 		
+		mouth.setFilled(true);
+		mouth.setFillColor(Color.RED);
+		
 		add(mouth, x2, y2);
 		
 		
