@@ -11,7 +11,7 @@ public class Problem14 extends GraphicsProgram {
 	private static final int FACE_HEIGHT = 350;
 	private static final int MOUTH_WIDTH = 80;
 	private static final int MOUTH_HEIGHT = 30;
-	private static final int EYES_WIDTH = 30;
+	private static final int EYES_WIDTH = 50;
 	private static final int EYES_HEIGHT = 80;
 	public void run() {
 		drawRobot();
