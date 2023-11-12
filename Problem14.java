@@ -64,7 +64,7 @@ public class Problem14 extends GraphicsProgram {
 			if (i == 0) {
 				x = getWidth() / 2 - FACE_WIDTH / 2 + 30;
 			}else {
-				x = getWidth() / 2 + FACE_WIDTH / 2 - 30;
+				x = getWidth() / 2 + FACE_WIDTH / 2 - EYES_WIDTH - 30;
 			}
 			GOval eyes = new GOval(EYES_WIDTH, EYES_HEIGHT);
 			
