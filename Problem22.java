@@ -16,7 +16,6 @@ public class Problem22 extends GraphicsProgram {
 			x += squareLength;
 			
 		}
-		x += squareLength;
 		y += squareLength;
 		}
 
