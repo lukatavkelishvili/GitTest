@@ -56,20 +56,21 @@ public class Breakout extends GraphicsProgram {
 
 /** Number of turns */
 	private static final int NTURNS = 3;
+	
+	private static final double BRICK_X_OFFSET = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
 
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		double x = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
-		double y = BRICK_Y_OFFSET;
 		for (int i = 0; i < NBRICK_ROWS; i++) {
 			for (int j = 0; j < NBRICKS_PER_ROW; j++) {
+				double x = BRICK_X_OFFSET + j * (BRICK_WIDTH + BRICK_SEP);
+				double y = BRICK_Y_OFFSET + i * (BRICK_HEIGHT + BRICK_SEP);
+				
 				GRect brick = new GRect(BRICK_WIDTH, BRICK_HEIGHT);
 				add(brick, x, y);
-				x += BRICK_WIDTH + BRICK_SEP;
 			}
-			x = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;;
-			y += BRICK_HEIGHT + BRICK_SEP;
+		
 			
 		}
 	}
