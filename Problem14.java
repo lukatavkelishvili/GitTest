@@ -2,6 +2,7 @@
 
 import java.awt.Color;
 
+import acm.graphics.GOval;
 import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
@@ -10,8 +11,8 @@ public class Problem14 extends GraphicsProgram {
 	private static final int FACE_HEIGHT = 350;
 	private static final int MOUTH_WIDTH = 80;
 	private static final int MOUTH_HEIGHT = 30;
-	private static final int EYES_WIDTH = 80;
-	private static final int EYES_HEIGHT = 30;
+	private static final int EYES_WIDTH = 30;
+	private static final int EYES_HEIGHT = 80;
 	public void run() {
 		drawRobot();
 		
@@ -65,7 +66,7 @@ public class Problem14 extends GraphicsProgram {
 			}else {
 				x = getWidth() / 2 + FACE_WIDTH / 2 - 30;
 			}
-			GRect eyes = new GRect(EYES_WIDTH, EYES_HEIGHT);
+			GOval eyes = new GOval(EYES_WIDTH, EYES_HEIGHT);
 			
 			eyes.setFilled(true);
 			eyes.setFillColor(Color.WHITE);
