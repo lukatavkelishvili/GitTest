@@ -23,14 +23,17 @@ public class Problem12 extends GraphicsProgram {
 		add(door);
 	}
 	private void drawWindows() {
-		GRect windows = new GRect(WINDOW_WIDTH, WINDOW_HEIGHT);
+		double y = getHeight() / 2 + BODY_HEIGHT / 3;
+		double x;
 		for (int i = 0; i < 2; i++) {
 			if (i == 0) {
-				add(windows, getWidth() / 2 - BODY_WIDTH / 3 - WINDOW_WIDTH, getHeight() / 2 + BODY_HEIGHT / 3);
+				x = getWidth() / 2 - BODY_WIDTH / 3 - WINDOW_WIDTH;
 			}
 			else {
-				add(windows, getWidth() / 2 + BODY_WIDTH / 3, getHeight() / 2 + BODY_HEIGHT / 3);
+				x = getWidth() / 2 + BODY_WIDTH / 3;
 			}
+			GRect windows = new GRect(WINDOW_WIDTH, WINDOW_HEIGHT);
+			add(windows);
 		}
 	}
 	private void drawRoof() {
