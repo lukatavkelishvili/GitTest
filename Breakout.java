@@ -78,7 +78,7 @@ public class Breakout extends GraphicsProgram {
 		
 		paddle.setFilled(true);
 		add(paddle, x, y);
-		
+		////
 		
 	}
 
