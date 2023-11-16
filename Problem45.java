@@ -27,4 +27,4 @@ public class Problem45 extends ConsoleProgram {
 }
 // f(x )  = x * 2 + 4;
 // 
-// f ( 5 ) = 5 * 2 + 4
+// f ( 5 ) = 5 * 2 + 4;
