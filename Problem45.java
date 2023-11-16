@@ -9,7 +9,7 @@ public class Problem45 extends ConsoleProgram {
 		
 	}
 
-	private int symbolRepetition(phrase) {
+	private int symbolRepetition() {
 		int a = 0;
 		for (int i = 0; i < phrase.length(); i++) {
 			if (symbol.equals(phrase.charAt(i))) {
