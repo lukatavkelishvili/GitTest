@@ -5,6 +5,7 @@ public class Problem45 extends ConsoleProgram {
 		String phrase = readLine("Enter word: ");
 		char symbol = readLine("Enter symbol: ").charAt(0);
 		symbolRepetition(phrase, symbol);
+		println("Symbol is repetited" + symbolRepetition(phrase, symbol) + "times.");
 		
 		
 	}
