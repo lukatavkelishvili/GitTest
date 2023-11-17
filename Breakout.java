@@ -111,7 +111,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void mousePressed(MouseEvent e) {
-		
+		paddle.getX();
 		
 	}
 
