@@ -67,7 +67,6 @@ public class Breakout extends GraphicsProgram {
 	private GObject object;
 	
 	public void init() {
-		setBackground(Color.RED);
 		
 		GRect frame = new GRect(WIDTH, HEIGHT);
 		add(frame);
