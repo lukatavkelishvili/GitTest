@@ -82,6 +82,7 @@ public class Breakout extends GraphicsProgram {
 				add(brick, x, y);
 			}
 		}
+		
 		paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
 		double x = WIDTH / 2 - PADDLE_WIDTH / 2;
 		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
@@ -126,9 +127,11 @@ public class Breakout extends GraphicsProgram {
 		if (object != paddle) {
 			object = null;
 		}
+		while (paddle.getX() <= WIDTH - PADDLE_WIDTH) {
 		if (object != null) {
 			object.move(e.getX() - prevX, 0);
 			prevX = e.getX();
+		}
 		}
 	}
 		
