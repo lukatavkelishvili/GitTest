@@ -145,6 +145,9 @@ public class Breakout extends GraphicsProgram {
 		add(ball, WIDTH / 2 - BALL_RADIUS, HEIGHT / 2 - BALL_RADIUS);
 		
 		vx = rgen.nextDouble(1.0, 3.0);
+		if (rgen.nextBoolean(0.5)) {
+			vx = - vx;
+		}
 		vy = 3.0;
 
 		while (ball.getX() >= 0 && ball.getX() <= WIDTH - 2 * BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= HEIGHT - 2 * BALL_RADIUS) {
@@ -159,6 +162,7 @@ public class Breakout extends GraphicsProgram {
 			pause(PAUSE);
 			}
 		}
+		
 		
 		
 		
