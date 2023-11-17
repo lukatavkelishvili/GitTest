@@ -76,7 +76,11 @@ public class Breakout extends GraphicsProgram {
 			}
 		}
 		addMouseListeners();
-		
+		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
+		double x;
+		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+		paddle.setFilled(true);
+		add(paddle, x, y);
 		
 		
 		
@@ -106,11 +110,6 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void mousePressed(MouseEvent e) {
-		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
-		double x = getX();
-		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
-		paddle.setFilled(true);
-		add(paddle, x, y);
 		
 	}
 
