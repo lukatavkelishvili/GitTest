@@ -124,14 +124,13 @@ public class Breakout extends GraphicsProgram {
 			object = null;
 		}
 		if (object != null) {
-			while (paddle.getX() < WIDTH - PADDLE_WIDTH) {
-				object.move(e.getX() - prevX, 0);
-				prevX = e.getX();
-			}
+			object.move(e.getX() - prevX, 0);
+			prevX = e.getX();
 		}
-		
-		
 	}
+		
+		
+
 
 /* Method: run() */
 /** Runs the Breakout program. */
