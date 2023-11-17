@@ -88,7 +88,7 @@ public class Breakout extends GraphicsProgram {
 		paddle.setFilled(true);
 		add(paddle, x, y);
 		addMouseListeners();
-		
+		// sazgvrebshi ver chavsvi chogani jer
 		
 		
 	}
@@ -149,12 +149,12 @@ public class Breakout extends GraphicsProgram {
 
 		while (ball.getX() >= 0 && ball.getX() <= WIDTH - 2 * BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= HEIGHT - 2 * BALL_RADIUS) {
 			while (true) {
-			if (ball.getX() <= 0 || ball.getX() >= WIDTH - 2 * BALL_RADIUS) {
-				vx = - vx;
-			}
-			if (ball.getY() <= 0 || ball.getY() >= HEIGHT - 2 * BALL_RADIUS) {
-				vy = - vy;
-			}
+				if (ball.getX() <= 0 || ball.getX() >= WIDTH - 2 * BALL_RADIUS) {
+					vx = - vx;
+				}
+				if (ball.getY() <= 0 || ball.getY() >= HEIGHT - 2 * BALL_RADIUS) {
+					vy = - vy;
+				}
 			ball.move(vx,  vy);
 			pause(PAUSE);
 			}
