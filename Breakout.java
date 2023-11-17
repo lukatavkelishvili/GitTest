@@ -59,7 +59,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final double BRICK_X_OFFSET = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
 	
-	GRect paddle;
+	private GRect paddle;
+	private int prevX;
 	public void init() {
 		
 		GRect frame = new GRect(WIDTH, HEIGHT);
@@ -112,7 +113,8 @@ public class Breakout extends GraphicsProgram {
 	
 	public void mouseDragged(MouseEvent e) {
 		if (paddle != null) {
-			paddle.move(getX(), 5);
+			paddle.move(getX() - prevX, 0);
+			prevX = e.getX();
 		}
 		
 		
