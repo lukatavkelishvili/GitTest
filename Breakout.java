@@ -59,10 +59,10 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final double BRICK_X_OFFSET = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
 	
-	private GRect paddle;
+//	private GRect paddle;
 	private int prevX;
 	private int prevY;
-	private GObject object;
+	private GObject paddle;
 	public void init() {
 		
 		GRect frame = new GRect(WIDTH, HEIGHT);
@@ -83,7 +83,7 @@ public class Breakout extends GraphicsProgram {
 		paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
 		double x = WIDTH / 2 - PADDLE_WIDTH / 2;
 		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
-		paddle.setFilled(true);
+		((GRect) paddle).setFilled(true);
 		add(paddle, x, y);
 		
 		
@@ -116,12 +116,12 @@ public class Breakout extends GraphicsProgram {
 	public void mousePressed(MouseEvent e) {
 		prevX = e.getX();
 		prevY = e.getY();
-		object = getElementAt(prevX, prevY);
+		paddle = getElementAt(prevX, prevY);
 	}
 	
 	public void mouseDragged(MouseEvent e) {
-		if (object != null) {
-			object.move(e.getX() - prevX, 0);
+		if (paddle != null) {
+			paddle.move(e.getX() - prevX, 0);
 			prevX = e.getX();
 		}
 		
