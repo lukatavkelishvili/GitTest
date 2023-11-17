@@ -62,7 +62,7 @@ public class Breakout extends GraphicsProgram {
 	private GRect paddle;
 	private int prevX;
 	private int prevY;
-	private GObject object = null;
+	private GObject object;
 	public void init() {
 		
 		GRect frame = new GRect(WIDTH, HEIGHT);
@@ -79,12 +79,12 @@ public class Breakout extends GraphicsProgram {
 				add(brick, x, y);
 			}
 		}
-		addMouseListeners();
 		paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
 		double x = WIDTH / 2 - PADDLE_WIDTH / 2;
 		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
 		paddle.setFilled(true);
 		add(paddle, x, y);
+		addMouseListeners();
 		
 		
 		
@@ -120,6 +120,9 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void mouseDragged(MouseEvent e) {
+		if (object != paddle) {
+			object = null;
+		}
 		if (object != null) {
 			object.move(e.getX() - prevX, 0);
 			prevX = e.getX();
