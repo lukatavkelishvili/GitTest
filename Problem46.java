@@ -15,7 +15,7 @@ public class Problem46 extends ConsoleProgram {
 		}
 	}
 	
-	private char frequentSymbol()
+//	private char frequentSymbol()
 
 	private int symbolRepetition(String phrase, char symbol) {
 		int a = 0;
