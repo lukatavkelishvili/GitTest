@@ -89,9 +89,9 @@ public class Breakout extends GraphicsProgram {
 		paddle.setFilled(true);
 		add(paddle, x, y);
 		while (x < WIDTH - PADDLE_WIDTH) {
-			addMouseListeners();
+			
 		}
-		
+		addMouseListeners();
 		// sazgvrebshi ver chavsvi chogani jer
 		
 		
