@@ -61,6 +61,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private GRect paddle;
 	private int prevX;
+	private int prevY;
+	private GObject object;
 	public void init() {
 		
 		GRect frame = new GRect(WIDTH, HEIGHT);
@@ -113,7 +115,8 @@ public class Breakout extends GraphicsProgram {
 	
 	public void mousePressed(MouseEvent e) {
 		prevX = e.getX();
-		GObject paddle = getElementAt(e.getX(), e.getY());
+		prevY = e.getY();
+		object = getElementAt(prevX, prevY);
 	}
 	
 	public void mouseDragged(MouseEvent e) {
