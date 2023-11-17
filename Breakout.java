@@ -75,12 +75,10 @@ public class Breakout extends GraphicsProgram {
 				add(brick, x, y);
 			}
 		}
-		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
-		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+		addMouseListeners();
 		
-//		paddle.setFilled(true);
-//		add(paddle, x, y);
-		////
+		
+		
 		
 	}
 
@@ -105,6 +103,15 @@ public class Breakout extends GraphicsProgram {
 			brick.setColor(Color.CYAN);
 			return(true);
 		}
+	}
+	
+	public void mousePressed(MouseEvent e) {
+		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
+		double x = getX();
+		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+		paddle.setFilled(true);
+		add(paddle, x, y);
+		
 	}
 
 /* Method: run() */
