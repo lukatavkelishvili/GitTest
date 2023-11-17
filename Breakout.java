@@ -140,14 +140,14 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		GOval ball = new GOval(BALL_RADIUS, BALL_RADIUS);
+		GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
 		ball.setFilled(true);
 		add(ball, WIDTH / 2 - BALL_RADIUS, HEIGHT / 2 - BALL_RADIUS);
 		
 		vx = rgen.nextDouble(1.0, 3.0);
 		vy = 3.0;
 
-		while (ball.getX() >= 0 && ball.getX() <= WIDTH - BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= HEIGHT - BALL_RADIUS) {
+		while (ball.getX() >= 0 && ball.getX() <= WIDTH - 2 * BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= HEIGHT - 2 * BALL_RADIUS) {
 			ball.move(vx,  vy);
 			pause(PAUSE);
 			
