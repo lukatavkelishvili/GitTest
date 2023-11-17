@@ -4,7 +4,7 @@ public class Problem45 extends ConsoleProgram {
 	public void run() {
 		String phrase = readLine("Enter word: ");
 		char symbol = readLine("Enter symbol: ").charAt(0);
-		symbolRepetition(phrase, symbol);
+//		symbolRepetition(phrase, symbol);
 		println("Symbol is repetited " + symbolRepetition(phrase, symbol) + " times.");
 		
 		
