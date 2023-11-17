@@ -58,10 +58,8 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 	
 	private static final double BRICK_X_OFFSET = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
-
-/* Method: run() */
-/** Runs the Breakout program. */
-	public void run() {
+	
+	public void init() {
 		for (int i = 0; i < NBRICK_ROWS; i++) {
 			for (int j = 0; j < NBRICKS_PER_ROW; j++) {
 				double x = BRICK_X_OFFSET + j * (BRICK_WIDTH + BRICK_SEP);
@@ -69,23 +67,23 @@ public class Breakout extends GraphicsProgram {
 				
 				GRect brick = new GRect(BRICK_WIDTH, BRICK_HEIGHT);
 				brick.setFilled(true);
-				if (i == 0 || i == 1) {
-					brick.setColor(Color.RED);
-				}
-				if (i == 2 || i == 3) {
-					brick.setColor(Color.ORANGE);
-				}
-				if (i == 4 || i == 5) {
-					brick.setColor(Color.YELLOW);
-				}
-				if (i == 6 || i == 7) {
-					brick.setColor(Color.GREEN);
-				}
-				else {
-					brick.setColor(Color.CYAN);
-				}
+//				if (i == 0 || i == 1) {
+//					brick.setColor(Color.RED);
+//				}
+//				if (i == 2 || i == 3) {
+//					brick.setColor(Color.ORANGE);
+//				}
+//				if (i == 4 || i == 5) {
+//					brick.setColor(Color.YELLOW);
+//				}
+//				if (i == 6 || i == 7) {
+//					brick.setColor(Color.GREEN);
+//				}
+//				else {
+//					brick.setColor(Color.CYAN);
+//				}
 				
-				
+				paintBricks(i, brick);
 				add(brick, x, y);
 			}
 		}
@@ -95,6 +93,22 @@ public class Breakout extends GraphicsProgram {
 //		paddle.setFilled(true);
 //		add(paddle, x, y);
 		////
+		
+	}
+
+	private boolean paintBricks(int i, GRect brick) {
+		if (i < 2) {
+			brick.setColor(Color.RED);
+		}
+		return(true);
+	
+		
+	}
+
+/* Method: run() */
+/** Runs the Breakout program. */
+	public void run() {
+		
 		
 	}
 
