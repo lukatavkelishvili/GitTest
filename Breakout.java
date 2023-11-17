@@ -59,10 +59,13 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final double BRICK_X_OFFSET = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
 	
+	private static final int PAUSE = 20;
+	
 	private GRect paddle;
 	private int prevX;
 	private int prevY;
 	private GObject object;
+	
 	public void init() {
 		
 		GRect frame = new GRect(WIDTH, HEIGHT);
@@ -130,7 +133,9 @@ public class Breakout extends GraphicsProgram {
 	}
 		
 		
-
+	RandomGenerator rgen = RandomGenerator.getInstance();
+	private double vx;
+	private double vy;
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -138,6 +143,15 @@ public class Breakout extends GraphicsProgram {
 		GOval ball = new GOval(BALL_RADIUS, BALL_RADIUS);
 		ball.setFilled(true);
 		add(ball, WIDTH / 2 - BALL_RADIUS, HEIGHT / 2 - BALL_RADIUS);
+		
+		vx = rgen.nextDouble(1.0, 3.0);
+		vy = 3.0;
+
+		while (ball.getX() > 0 && ball.getX() < WIDTH - 2 * BALL_RADIUS && ball.getY() > 0 && ball.getY() < HEIGHT - 2 * BALL_RADIUS) {
+			ball.move(vx,  vy);
+			pause(PAUSE);
+			
+		}
 		
 		
 	}
