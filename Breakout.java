@@ -99,9 +99,26 @@ public class Breakout extends GraphicsProgram {
 	private boolean paintBricks(int i, GRect brick) {
 		if (i < 2) {
 			brick.setColor(Color.RED);
+			return(true);
 		}
-		return(true);
-	
+		if (i < 4) {
+			brick.setColor(Color.ORANGE);
+			return(true);
+		}
+		if (i < 6) {
+			brick.setColor(Color.YELLOW);
+			return(true);
+		}
+		if (i < 8) {
+			brick.setColor(Color.GREEN);
+			return(true);
+		}
+		else {
+			brick.setColor(Color.CYAN);
+			return(true);
+		}
+		
+		
 		
 	}
 
