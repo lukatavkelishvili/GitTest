@@ -113,6 +113,7 @@ public class Breakout extends GraphicsProgram {
 	
 	public void mousePressed(MouseEvent e) {
 		prevX = e.getX();
+		GObject paddle = getElementAt(e.getX(), e.getY());
 	}
 	
 	public void mouseDragged(MouseEvent e) {
