@@ -160,21 +160,24 @@ public class Breakout extends GraphicsProgram {
 				if (ball.getY() <= 0 || ball.getY() >= HEIGHT - 2 * BALL_RADIUS) {
 					vy = - vy;
 				}
-			ball.move(vx,  vy);
-			pause(PAUSE);
+				
+		if (getCollidingObject(ball.getX(), ball.getY()) != null) {
+			vx = - vx;
+			
+		}
+		ball.move(vx,  vy);
+		pause(PAUSE);
 			}
 		}
 	}
 	
-//	private GObject getCollidingObject(double getX(), double getY()) {
-//		if (getElementAt(getX(), getY()) == null) {
-//			return(null);
-//		}
-//		if (getElementAt(getX(), getY()) != null) {
-//			return(GObject collider);
-//		}
-//		
-//		
-//	}
+	private GObject getCollidingObject(double a, double b) {
+		if (getElementAt(a, b) == null) {
+			return(null);
+		}
+		else {
+			return(collider);		
+		}
+	}
 
 }
