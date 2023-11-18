@@ -137,6 +137,7 @@ public class Breakout extends GraphicsProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	private double vx;
 	private double vy;
+	private GObject collider;
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -167,6 +168,17 @@ public class Breakout extends GraphicsProgram {
 		
 		
 		
+		
+		
+	}
+	
+	private GObject getCollidingObject(double getX(), double getY()) {
+		if (getElementAt(getX(), getY()) == null) {
+			return(null);
+		}
+		if (getElementAt(getX(), getY()) !== null) {
+			return(GObject collider);
+		}
 		
 		
 	}
