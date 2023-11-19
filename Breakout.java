@@ -66,7 +66,7 @@ public class Breakout extends GraphicsProgram {
 	private int prevY;
 	private GObject object;
 	
-	public void init() {
+	public void initGame() {
 		
 		for (int i = 0; i < NBRICK_ROWS; i++) {
 			for (int j = 0; j < NBRICKS_PER_ROW; j++) {
@@ -147,6 +147,8 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
+		initGame();
+		
 		GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
 		ball.setFilled(true);
 		add(ball, getWidth() / 2 - BALL_RADIUS, getHeight() / 2 - BALL_RADIUS);
