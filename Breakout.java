@@ -186,8 +186,9 @@ public class Breakout extends GraphicsProgram {
         }
     }
     private void removeGameAndShowMessage(String text) {
-    	removeAll();
     	pause(500);
+    	removeAll();
+    	
     	GLabel message = new GLabel(text);
     	add(message, 100, 100);
     	
