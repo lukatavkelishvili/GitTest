@@ -155,7 +155,6 @@ public class Breakout extends GraphicsProgram {
 
         while (true) {
             startGame();
-            pause(PAUSE);
             restartBallAndPaddlePositions();
             livesLeft--;
 
