@@ -243,10 +243,10 @@ public class Breakout extends GraphicsProgram {
         	 return getElementAt(x + 2 * BALL_RADIUS, y);
          }
          if(getElementAt(x, y + 2 * BALL_RADIUS) != null) {
-        	 return getElementAt(x + 2 * BALL_RADIUS, y);
+        	 return getElementAt(x, y + 2 * BALL_RADIUS);
          }
          if(getElementAt(x + 2 * BALL_RADIUS, y + 2 * BALL_RADIUS) != null) {
-        	 return getElementAt(x + 2 * BALL_RADIUS, y);
+        	 return getElementAt(x + 2 * BALL_RADIUS, y + 2 * BALL_RADIUS);
          }
 
         return null;
