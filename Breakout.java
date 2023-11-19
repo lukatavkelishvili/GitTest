@@ -63,9 +63,9 @@ public class Breakout extends GraphicsProgram {
 
     private GRect paddle;
     private GOval ball;
-    RandomGenerator rgen = RandomGenerator.getInstance();
     private double vx;
     private double vy;
+    RandomGenerator rgen = RandomGenerator.getInstance();
 
     private int bricksCount = NBRICKS_PER_ROW * NBRICK_ROWS;
     private int liveLeft = NTURNS;
@@ -82,7 +82,7 @@ public class Breakout extends GraphicsProgram {
         addMouseListeners();
     }
     
-    private void drawBricks(){
+    private void drawBricks() {
         for (int i = 0; i < NBRICK_ROWS; i++) {
             for (int j = 0; j < NBRICKS_PER_ROW; j++) {
                 double x = BRICK_X_OFFSET + j * (BRICK_WIDTH + BRICK_SEP);
@@ -96,7 +96,7 @@ public class Breakout extends GraphicsProgram {
         }
     }
     
-    private void drawPaddle(){
+    private void drawPaddle() {
         paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
         double x = getWidth() / 2 - PADDLE_WIDTH / 2;
         double y = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
@@ -133,10 +133,10 @@ public class Breakout extends GraphicsProgram {
         }
     }
 
-    public void mouseMoved(MouseEvent e){
+    public void mouseMoved(MouseEvent e) {
         int mouseX = e.getX();
 
-        if(mouseX >= PADDLE_WIDTH / 2 && mouseX <= getWidth() - PADDLE_Y_OFFSET){
+        if (mouseX >= PADDLE_WIDTH / 2 && mouseX <= getWidth() - PADDLE_Y_OFFSET) {
             paddle.setLocation(mouseX - PADDLE_WIDTH / 2, paddle.getY());
         }
     }
@@ -151,20 +151,20 @@ public class Breakout extends GraphicsProgram {
         playGame();
     }
     
-    private void playGame(){
+    private void playGame() {
 
-        while(true) {
+        while (true) {
             startGame();
             restartBallAndPaddlePositions();
             liveLeft--;
 
-            if(bricksCount == 0){
+            if (bricksCount == 0) {
                 // moige
             	removeGameAndShowMessage("YOU WON");
                 break;
             }
 
-            if(liveLeft == 0){
+            if (liveLeft == 0) {
                 // wageba
             	removeGameAndShowMessage("YOU LOSE");
                 break;
@@ -174,7 +174,7 @@ public class Breakout extends GraphicsProgram {
 
     
 
-    private void restartBallAndPaddlePositions(){
+    private void restartBallAndPaddlePositions() {
 
         double paddleX = getWidth() / 2 - PADDLE_WIDTH / 2;
         double paddleY = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
@@ -187,7 +187,7 @@ public class Breakout extends GraphicsProgram {
         ball.setLocation(ballX, ballY);
     }
 
-    private void startGame(){
+    private void startGame() {
     	
     	waitForClick();
     	
@@ -197,7 +197,7 @@ public class Breakout extends GraphicsProgram {
             vx = - vx;
         }
 
-        while(true){
+        while (true) {
 
             ball.move(vx,  vy);
 
@@ -208,15 +208,15 @@ public class Breakout extends GraphicsProgram {
                 vy = - vy;
             }
 
-            if(ball.getY() >= getHeight() - 2 * BALL_RADIUS){
+            if (ball.getY() >= getHeight() - 2 * BALL_RADIUS) {
                 break;
             }
 
             GObject collider = getCollidingObject();
-            if(collider == paddle) { 
+            if (collider == paddle) { 
             	vy = -vy;
             }
-            else if(collider != null) { 
+            else if (collider != null) { 
             	remove(collider);  
             	vy = - vy;
             	bricksCount --;
@@ -224,7 +224,6 @@ public class Breakout extends GraphicsProgram {
             		break;
             	}
             }
-            // if(sideHit()) vx = -vx; else vy = -vy }
 
             pause(PAUSE);
         }
@@ -236,16 +235,16 @@ public class Breakout extends GraphicsProgram {
          double y = ball.getY();
 
         // check square corners
-         if(getElementAt(x, y) != null) {
+         if (getElementAt(x, y) != null) {
         	 return getElementAt(x, y);
          }
-         if(getElementAt(x + 2 * BALL_RADIUS, y) != null) {
+         if (getElementAt(x + 2 * BALL_RADIUS, y) != null) {
         	 return getElementAt(x + 2 * BALL_RADIUS, y);
          }
-         if(getElementAt(x, y + 2 * BALL_RADIUS) != null) {
+         if (getElementAt(x, y + 2 * BALL_RADIUS) != null) {
         	 return getElementAt(x, y + 2 * BALL_RADIUS);
          }
-         if(getElementAt(x + 2 * BALL_RADIUS, y + 2 * BALL_RADIUS) != null) {
+         if (getElementAt(x + 2 * BALL_RADIUS, y + 2 * BALL_RADIUS) != null) {
         	 return getElementAt(x + 2 * BALL_RADIUS, y + 2 * BALL_RADIUS);
          }
 
