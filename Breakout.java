@@ -255,7 +255,7 @@ public class Breakout extends GraphicsProgram {
     	removeAll();
     	pause(500);
     	GLabel message = new GLabel(text);
-    	add(message, getWidth(), getHeight());
+    	add(message, getWidth() / 2, getHeight() / 2);
     	
     	println(text);
     }
