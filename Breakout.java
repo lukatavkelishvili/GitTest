@@ -187,6 +187,10 @@ public class Breakout extends GraphicsProgram {
     }
     private void removeGameAndShowMessage(String text) {
     	removeAll();
+    	pause(100);
+    	GLabel message = new GLabel(text);
+    	add(message, 100, 100);
+    	
     	println(text);
     }
 
@@ -199,6 +203,7 @@ public class Breakout extends GraphicsProgram {
 
             if(bricksCount == 0){
                 // moige
+            	removeGameAndShowMessage("YOU WON");
                 break;
             }
 
