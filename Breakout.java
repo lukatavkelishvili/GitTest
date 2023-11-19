@@ -63,9 +63,12 @@ public class Breakout extends GraphicsProgram {
 
     private GRect paddle;
     private GOval ball;
-    private int prevX;
-    private int prevY;
-    private GObject object;
+    RandomGenerator rgen = RandomGenerator.getInstance();
+    private double vx;
+    private double vy;
+
+    private int bricksCount = NBRICKS_PER_ROW * NBRICK_ROWS;
+    private int liveLeft = NTURNS;
 
 
     private void drawBricks(){
@@ -136,67 +139,85 @@ public class Breakout extends GraphicsProgram {
         }
     }
 
-    // public void mousePressed(MouseEvent e) {
-    // 	prevX = e.getX();
-    // 	prevY = e.getY();
-    // 	object = getElementAt(prevX, prevY);
-    // }
+    private void restartBallAndPaddlePositions(){
 
-    // public void mouseDragged(MouseEvent e) {
-    // 	if (object != paddle) {
-    // 		object = null;
-    // 	}
-    // 	if (object != null) {
-    // 		object.move(e.getX() - prevX, 0);
-    // 		prevX = e.getX();
-    // 	}
-    // }
+        double paddleX = getWidth() / 2 - PADDLE_WIDTH / 2;
+        double paddleY = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
 
+        paddle.setLocation(paddleX, paddleY);
 
-    RandomGenerator rgen = RandomGenerator.getInstance();
-    private double vx;
-    private double vy;
-    private GObject collider;
+        double ballX = getWidth() / 2 - BALL_RADIUS;
+        double ballY = getHeight() / 2 - BALL_RADIUS;
+
+        ball.setLocation(ballX, ballY);
+    }
+
+    private void startGame(){
+
+        vx = rgen.nextDouble(1.0, 3.0);
+        if (rgen.nextBoolean(0.5)) {
+            vx = - vx;
+        }
+
+        while(true){
+
+            ball.move(vx,  vy);
+
+            if (ball.getX() <= 0 || ball.getX() >= getWidth() - 2 * BALL_RADIUS) {
+                vx = - vx;
+            }
+            if (ball.getY() <= 0) {
+                vy = - vy;
+            }
+
+            if(ball.getY() >= getHeight() - 2 * BALL_RADIUS){
+                break;
+            }
+
+            // GObject collider = getCollidingObject();
+            // if(collider == paddle) { vy = -vy}
+            // else if(collider != null) { delete brick, bricksCount - 1, if(brickCount == 0) break;
+            // if(sideHit()) vx = -vx; else vy = -vy }
+
+            pause(PAUSE);
+        }
+    }
+
+    private void playGame(){
+
+        while(true) {
+            startGame();
+            restartBallAndPaddlePositions();
+            liveLeft--;
+
+            if(bricksCount == 0){
+                // moige
+                break;
+            }
+
+            if(liveLeft == 0){
+                // wageba
+                break;
+            }
+        }
+    }
+
+    private GObject getCollidingObject() {
+
+        // x = ball.getX(); y = ball.getY();
+
+        // check square corners
+        // if(getElementAt(x, y) != null) return getElementAt(x, y);
+        // else if(getElementAt(x + d, y) != null) return getElementAt(x + d, y);
+
+        return null;
+    }
 
     /* Method: run() */
     /** Runs the Breakout program. */
     public void run() {
 
         initGame();
-
-        vx = rgen.nextDouble(1.0, 3.0);
-        if (rgen.nextBoolean(0.5)) {
-            vx = - vx;
-        }
-        vy = 3.0;
-
-        while (ball.getX() >= 0 && ball.getX() <= getWidth() - 2 * BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= getHeight() - 2 * BALL_RADIUS) {
-            while (true) {
-                if (ball.getX() <= 0 || ball.getX() >= getWidth() - 2 * BALL_RADIUS) {
-                    vx = - vx;
-                }
-                if (ball.getY() <= 0 || ball.getY() >= getHeight() - 2 * BALL_RADIUS) {
-                    vy = - vy;
-                }
-
-                getCollidingObject(ball.getX(), ball.getY(), collider);
-                if (collider == paddle) {
-                    vy = - vy;
-                }
-
-                ball.move(vx,  vy);
-                pause(PAUSE);
-            }
-        }
+        playGame();
     }
-
-    private GObject getCollidingObject(double a, double b, GObject c) {
-        if (getElementAt(a, b) == null) {
-            return(null);
-        }
-        else {
-            return(c);
-        }
-    }
-
 }
