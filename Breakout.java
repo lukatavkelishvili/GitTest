@@ -185,6 +185,10 @@ public class Breakout extends GraphicsProgram {
             pause(PAUSE);
         }
     }
+    private void removeGameAndShowMessage(String text) {
+    	removeAll();
+    	println(text);
+    }
 
     private void playGame(){
 
@@ -200,7 +204,7 @@ public class Breakout extends GraphicsProgram {
 
             if(liveLeft == 0){
                 // wageba
-            	removeAll();
+            	removeGameAndShowMessage("YOU LOSE");
                 break;
             }
         }
