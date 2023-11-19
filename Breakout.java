@@ -212,13 +212,44 @@ public class Breakout extends GraphicsProgram {
                 break;
             }
 
-            // GObject collider = getCollidingObject();
-            // if(collider == paddle) { vy = -vy}
-            // else if(collider != null) { delete brick, bricksCount - 1, if(brickCount == 0) break;
+            GObject collider = getCollidingObject();
+            if(collider == paddle) { 
+            	vy = -vy;
+            }
+            if(collider != null) { 
+            	remove(collider);  
+            	vy = - vy;
+            	bricksCount --;
+            	if(bricksCount == 0) {
+            		break;
+            	}
+            }
             // if(sideHit()) vx = -vx; else vy = -vy }
 
             pause(PAUSE);
         }
+    }
+
+    private GObject getCollidingObject() {
+
+         double x = ball.getX(); 
+         double y = ball.getY();
+
+        // check square corners
+         if(getElementAt(x, y) != null) {
+        	 return getElementAt(x, y);
+         }
+         if(getElementAt(x + 2 * BALL_RADIUS, y) != null) {
+        	 return getElementAt(x + 2 * BALL_RADIUS, y);
+         }
+         if(getElementAt(x, y + 2 * BALL_RADIUS) != null) {
+        	 return getElementAt(x + 2 * BALL_RADIUS, y);
+         }
+         if(getElementAt(x + 2 * BALL_RADIUS, y + 2 * BALL_RADIUS) != null) {
+        	 return getElementAt(x + 2 * BALL_RADIUS, y);
+         }
+
+        return null;
     }
     
     private void removeGameAndShowMessage(String text) {
@@ -228,19 +259,6 @@ public class Breakout extends GraphicsProgram {
     	add(message, 100, 100);
     	
     	println(text);
-    }
-
-    
-
-    private GObject getCollidingObject() {
-
-        // x = ball.getX(); y = ball.getY();
-
-        // check square corners
-        // if(getElementAt(x, y) != null) return getElementAt(x, y);
-        // else if(getElementAt(x + d, y) != null) return getElementAt(x + d, y);
-
-        return null;
     }
 
    
