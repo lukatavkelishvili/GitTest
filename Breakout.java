@@ -155,6 +155,7 @@ public class Breakout extends GraphicsProgram {
 
         while (true) {
             startGame();
+            pause(PAUSE);
             restartBallAndPaddlePositions();
             livesLeft--;
 
@@ -171,22 +172,7 @@ public class Breakout extends GraphicsProgram {
             }
         }
     }
-
     
-
-    private void restartBallAndPaddlePositions() {
-
-        double paddleX = getWidth() / 2 - PADDLE_WIDTH / 2;
-        double paddleY = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
-
-        paddle.setLocation(paddleX, paddleY);
-
-        double ballX = getWidth() / 2 - BALL_RADIUS;
-        double ballY = getHeight() / 2 - BALL_RADIUS;
-
-        ball.setLocation(ballX, ballY);
-    }
-
     private void startGame() {
     	
     	waitForClick();
@@ -228,6 +214,22 @@ public class Breakout extends GraphicsProgram {
             pause(PAUSE);
         }
     }
+
+    
+
+    private void restartBallAndPaddlePositions() {
+
+        double paddleX = getWidth() / 2 - PADDLE_WIDTH / 2;
+        double paddleY = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+
+        paddle.setLocation(paddleX, paddleY);
+
+        double ballX = getWidth() / 2 - BALL_RADIUS;
+        double ballY = getHeight() / 2 - BALL_RADIUS;
+
+        ball.setLocation(ballX, ballY);
+    }
+
 
     private GObject getCollidingObject() {
 
