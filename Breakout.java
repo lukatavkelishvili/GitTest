@@ -57,8 +57,10 @@ public class Breakout extends GraphicsProgram {
     /** Number of turns */
     private static final int NTURNS = 3;
 
+    /** Offset from canvas, brick rows will be mediated */
     private static final double BRICK_X_OFFSET = (double)WIDTH / 2 - (double)(NBRICKS_PER_ROW * BRICK_WIDTH + (NBRICKS_PER_ROW - 1) * BRICK_SEP) / 2;
 
+    /** Pause program to create animation */
     private static final int PAUSE = 20;
 
     private GRect paddle;
@@ -67,12 +69,15 @@ public class Breakout extends GraphicsProgram {
     private double vy;
     RandomGenerator rgen = RandomGenerator.getInstance();
 
+    /** With that I will count bricks and know when I win the game */
     private int bricksCount = NBRICKS_PER_ROW * NBRICK_ROWS;
+    
+    /** With that I will count lives and know when I lose the game */
     private int livesLeft = NTURNS;
 
 
    
-
+    // This part is initialization, that means no animation is created there, only materials for that 
     private void initGame() {
 
         drawBricks();
@@ -110,6 +115,7 @@ public class Breakout extends GraphicsProgram {
         add(ball, getWidth() / 2 - BALL_RADIUS, getHeight() / 2 - BALL_RADIUS);
     }
     
+    // This part will paint all my created GRects(bricks) with my desirable colors 
     private boolean paintBricks(int i, GRect brick) {
         if (i < 2) {
             brick.setColor(Color.RED);
@@ -133,6 +139,7 @@ public class Breakout extends GraphicsProgram {
         }
     }
 
+    // Controlling paddle with mouse moving  
     public void mouseMoved(MouseEvent e) {
         int mouseX = e.getX();
 
@@ -143,14 +150,14 @@ public class Breakout extends GraphicsProgram {
 
     
     
-    /* Method: run() */
-    /** Runs the Breakout program. */
+    // Runs the Breakout program. 
     public void run() {
 
         initGame();
         playGame();
     }
     
+    // Whole gaming part and rules are written in here 
     private void playGame() {
 
         while (true) {
@@ -160,20 +167,22 @@ public class Breakout extends GraphicsProgram {
 
             if (bricksCount == 0) {
                 // win
-            	removeGameAndShowMessage("YOU WON");
+            	removeGameAndShowMessage("YOU WON!");
                 break;
             }
 
             if (livesLeft == 0) {
                 // lose
-            	removeGameAndShowMessage("YOU LOSE");
+            	removeGameAndShowMessage("YOU LOST!");
                 break;
             }
         }
     }
     
+    // This method allows us to play game once 
     private void startGame() {
     	
+    	// Game starts when we press the click button 
     	waitForClick();
     	
         vx = rgen.nextDouble(1.0, 3.0);
@@ -186,6 +195,7 @@ public class Breakout extends GraphicsProgram {
 
             ball.move(vx,  vy);
 
+            // ball is moving in canvas 
             if (ball.getX() <= 0 || ball.getX() >= getWidth() - 2 * BALL_RADIUS) {
                 vx = - vx;
             }
@@ -193,14 +203,18 @@ public class Breakout extends GraphicsProgram {
                 vy = - vy;
             }
 
+            // If ball crushes below surface of canvas, game stops 
             if (ball.getY() >= getHeight() - 2 * BALL_RADIUS) {
                 break;
             }
 
             GObject collider = getCollidingObject();
+            
+            // When ball touches paddle 
             if (collider == paddle) { 
             	vy = -vy;
             }
+            // When ball touches bricks
             else if (collider != null) { 
             	remove(collider);  
             	vy = - vy;
@@ -215,7 +229,7 @@ public class Breakout extends GraphicsProgram {
     }
 
     
-
+    // While restarting game, ball and paddle should be on starting positions
     private void restartBallAndPaddlePositions() {
 
         double paddleX = getWidth() / 2 - PADDLE_WIDTH / 2;
@@ -229,7 +243,7 @@ public class Breakout extends GraphicsProgram {
         ball.setLocation(ballX, ballY);
     }
 
-
+    // This method returns GObject that is touched by the vertices of the imaginary rectangle of the ball
     private GObject getCollidingObject() {
 
          double x = ball.getX(); 
@@ -252,6 +266,7 @@ public class Breakout extends GraphicsProgram {
         return null;
     }
     
+    // When we lose or win, this method will tell us
     private void removeGameAndShowMessage(String text) {
     	removeAll();
     	pause(500);
