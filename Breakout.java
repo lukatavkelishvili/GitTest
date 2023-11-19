@@ -159,13 +159,13 @@ public class Breakout extends GraphicsProgram {
             liveLeft--;
 
             if (bricksCount == 0) {
-                // moige
+                // win
             	removeGameAndShowMessage("YOU WON");
                 break;
             }
 
             if (liveLeft == 0) {
-                // wageba
+                // lose
             	removeGameAndShowMessage("YOU LOSE");
                 break;
             }
@@ -255,7 +255,7 @@ public class Breakout extends GraphicsProgram {
     	removeAll();
     	pause(500);
     	GLabel message = new GLabel(text);
-    	add(message, 100, 100);
+    	add(message, getWidth(), getHeight());
     	
     	println(text);
     }
