@@ -71,6 +71,17 @@ public class Breakout extends GraphicsProgram {
     private int liveLeft = NTURNS;
 
 
+   
+
+    private void initGame() {
+
+        drawBricks();
+        drawPaddle();
+        drawBall();
+
+        addMouseListeners();
+    }
+    
     private void drawBricks(){
         for (int i = 0; i < NBRICK_ROWS; i++) {
             for (int j = 0; j < NBRICKS_PER_ROW; j++) {
@@ -84,13 +95,7 @@ public class Breakout extends GraphicsProgram {
             }
         }
     }
-
-    private void drawBall(){
-        ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
-        ball.setFilled(true);
-        add(ball, getWidth() / 2 - BALL_RADIUS, getHeight() / 2 - BALL_RADIUS);
-    }
-
+    
     private void drawPaddle(){
         paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
         double x = getWidth() / 2 - PADDLE_WIDTH / 2;
@@ -99,15 +104,12 @@ public class Breakout extends GraphicsProgram {
         add(paddle, x, y);
     }
 
-    private void initGame() {
-
-        drawBricks();
-        drawPaddle();
-        drawBall();
-
-        addMouseListeners();
+    private void drawBall(){
+        ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
+        ball.setFilled(true);
+        add(ball, getWidth() / 2 - BALL_RADIUS, getHeight() / 2 - BALL_RADIUS);
     }
-
+    
     private boolean paintBricks(int i, GRect brick) {
         if (i < 2) {
             brick.setColor(Color.RED);
@@ -138,6 +140,39 @@ public class Breakout extends GraphicsProgram {
             paddle.setLocation(mouseX - PADDLE_WIDTH / 2, paddle.getY());
         }
     }
+
+    
+    
+    /* Method: run() */
+    /** Runs the Breakout program. */
+    public void run() {
+
+        initGame();
+        playGame();
+    }
+    
+    private void playGame(){
+
+        while(true) {
+            startGame();
+            restartBallAndPaddlePositions();
+            liveLeft--;
+
+            if(bricksCount == 0){
+                // moige
+            	removeGameAndShowMessage("YOU WON");
+                break;
+            }
+
+            if(liveLeft == 0){
+                // wageba
+            	removeGameAndShowMessage("YOU LOSE");
+                break;
+            }
+        }
+    }
+
+    
 
     private void restartBallAndPaddlePositions(){
 
@@ -185,36 +220,17 @@ public class Breakout extends GraphicsProgram {
             pause(PAUSE);
         }
     }
+    
     private void removeGameAndShowMessage(String text) {
-    	pause(500);
     	removeAll();
-    	
+    	pause(500);
     	GLabel message = new GLabel(text);
     	add(message, 100, 100);
     	
     	println(text);
     }
 
-    private void playGame(){
-
-        while(true) {
-            startGame();
-            restartBallAndPaddlePositions();
-            liveLeft--;
-
-            if(bricksCount == 0){
-                // moige
-            	removeGameAndShowMessage("YOU WON");
-                break;
-            }
-
-            if(liveLeft == 0){
-                // wageba
-            	removeGameAndShowMessage("YOU LOSE");
-                break;
-            }
-        }
-    }
+    
 
     private GObject getCollidingObject() {
 
@@ -227,11 +243,5 @@ public class Breakout extends GraphicsProgram {
         return null;
     }
 
-    /* Method: run() */
-    /** Runs the Breakout program. */
-    public void run() {
-
-        initGame();
-        playGame();
-    }
+   
 }
