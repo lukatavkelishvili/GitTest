@@ -200,6 +200,7 @@ public class Breakout extends GraphicsProgram {
 
             if(liveLeft == 0){
                 // wageba
+            	removeAll();
                 break;
             }
         }
