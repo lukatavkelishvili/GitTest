@@ -68,7 +68,7 @@ public class Breakout extends GraphicsProgram {
     RandomGenerator rgen = RandomGenerator.getInstance();
 
     private int bricksCount = NBRICKS_PER_ROW * NBRICK_ROWS;
-    private int liveLeft = NTURNS;
+    private int livesLeft = NTURNS;
 
 
    
@@ -156,7 +156,7 @@ public class Breakout extends GraphicsProgram {
         while (true) {
             startGame();
             restartBallAndPaddlePositions();
-            liveLeft--;
+            livesLeft--;
 
             if (bricksCount == 0) {
                 // win
@@ -164,7 +164,7 @@ public class Breakout extends GraphicsProgram {
                 break;
             }
 
-            if (liveLeft == 0) {
+            if (livesLeft == 0) {
                 // lose
             	removeGameAndShowMessage("YOU LOSE");
                 break;
