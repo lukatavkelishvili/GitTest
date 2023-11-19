@@ -68,7 +68,7 @@ public class Breakout extends GraphicsProgram {
 	
 	public void init() {
 		
-		GRect frame = new GRect(WIDTH, HEIGHT);
+		GRect frame = new GRect(getWidth(), getHeight());
 		add(frame);
 		
 		for (int i = 0; i < NBRICK_ROWS; i++) {
@@ -84,8 +84,8 @@ public class Breakout extends GraphicsProgram {
 		}
 		
 		paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
-		double x = WIDTH / 2 - PADDLE_WIDTH / 2;
-		double y = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+		double x = getWidth() / 2 - PADDLE_WIDTH / 2;
+		double y = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
 		paddle.setFilled(true);
 		add(paddle, x, y);
 		addMouseListeners();
@@ -116,22 +116,30 @@ public class Breakout extends GraphicsProgram {
 			return(true);
 		}
 	}
+
+  public void mouseMoved(MouseEvent e){
+    int mouseX = e.getX();
+
+    if(mouseX >= PADDLE_WIDTH / 2 && mouseX <= getWidth() - PADDLE_Y_OFFSET){
+      paddle.setLocation(mouseX - PADDLE_WIDTH / 2, paddle.getY());
+    }
+  }
 	
-	public void mousePressed(MouseEvent e) {
-		prevX = e.getX();
-		prevY = e.getY();
-		object = getElementAt(prevX, prevY);
-	}
+	// public void mousePressed(MouseEvent e) {
+	// 	prevX = e.getX();
+	// 	prevY = e.getY();
+	// 	object = getElementAt(prevX, prevY);
+	// }
 	
-	public void mouseDragged(MouseEvent e) {
-		if (object != paddle) {
-			object = null;
-		}
-		if (object != null) {
-			object.move(e.getX() - prevX, 0);
-			prevX = e.getX();
-		}
-	}
+	// public void mouseDragged(MouseEvent e) {
+	// 	if (object != paddle) {
+	// 		object = null;
+	// 	}
+	// 	if (object != null) {
+	// 		object.move(e.getX() - prevX, 0);
+	// 		prevX = e.getX();
+	// 	}
+	// }
 		
 		
 	RandomGenerator rgen = RandomGenerator.getInstance();
@@ -144,7 +152,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
 		ball.setFilled(true);
-		add(ball, WIDTH / 2 - BALL_RADIUS, HEIGHT / 2 - BALL_RADIUS);
+		add(ball, getWidth() / 2 - BALL_RADIUS, getHeight() / 2 - BALL_RADIUS);
 		
 		vx = rgen.nextDouble(1.0, 3.0);
 		if (rgen.nextBoolean(0.5)) {
@@ -152,12 +160,12 @@ public class Breakout extends GraphicsProgram {
 		}
 		vy = 3.0;
 
-		while (ball.getX() >= 0 && ball.getX() <= WIDTH - 2 * BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= HEIGHT - 2 * BALL_RADIUS) {
+		while (ball.getX() >= 0 && ball.getX() <= getWidth() - 2 * BALL_RADIUS && ball.getY() >= 0 && ball.getY() <= getHeight() - 2 * BALL_RADIUS) {
 			while (true) {
-				if (ball.getX() <= 0 || ball.getX() >= WIDTH - 2 * BALL_RADIUS) {
+				if (ball.getX() <= 0 || ball.getX() >= getWidth() - 2 * BALL_RADIUS) {
 					vx = - vx;
 				}
-				if (ball.getY() <= 0 || ball.getY() >= HEIGHT - 2 * BALL_RADIUS) {
+				if (ball.getY() <= 0 || ball.getY() >= getHeight() - 2 * BALL_RADIUS) {
 					vy = - vy;
 				}
 				
