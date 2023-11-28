@@ -14,7 +14,7 @@ public class Problem51 extends ConsoleProgram {
 		for (int i = 0; i < text.length(); i++) {
 			char ch = text.charAt(i);
 			
-			if (!result.contains("" + ch) {
+			if (!result.contains("" + ch)) {
 				result += ch;
 			}
 			
