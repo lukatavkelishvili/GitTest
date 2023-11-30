@@ -4,7 +4,7 @@ import acm.program.ConsoleProgram;
 
 public class Problem51 extends ConsoleProgram {
 	public void run() {
-		String text = readLine();
+		String text = readLine("Enter number: ");
 //		StringTokenizer tokenizer = new StringTokenizer(text);
 		String editedText = removeDuplicates(text);
 		println(editedText);
