@@ -11,7 +11,9 @@ import acm.program.ConsoleProgram;
 
 
 public class MidtermProblem2 extends ConsoleProgram {
+	
 	public void run() {
+		
 		String text = readLine("Enter text: ");
 		boolean answer = symbolChecks(text);
 		println(answer);
