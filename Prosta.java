@@ -2,8 +2,8 @@ import acm.program.ConsoleProgram;
 
 public class Prosta extends ConsoleProgram {
 	public void run() {
-		int a = 5;
-		println(factorial(a));
+		int a = readInt("Enter number: ");
+		println("number's factorial is:" + factorial(a));
 	}
 
 	private int factorial(int a) {
