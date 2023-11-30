@@ -2,11 +2,14 @@ import acm.program.ConsoleProgram;
 
 public class Prosta extends ConsoleProgram {
 	public void run() {
-		   int num = 5;
-		   cow(num);
+		   int money = 5;
+		   retireEarly();
+		   println(money);
 		}
 
-		private void cow(int grass) {
-		   println(grass);
+		private void retireEarly(){
+		   int money = 1200000;
+		   println(money);
 		}
-	}
+}
+
