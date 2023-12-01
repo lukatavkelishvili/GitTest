@@ -5,6 +5,7 @@ import acm.program.ConsoleProgram;
 public class Prosta extends ConsoleProgram {
 	public void run() {
 		int a = readPositiveInt();
+		println(a);
 		
 	}
 		private int readPositiveInt() {
