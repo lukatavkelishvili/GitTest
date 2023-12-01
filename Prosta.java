@@ -1,16 +1,30 @@
-import java.util.StringTokenizer;
+import java.awt.event.MouseEvent;
 
-import acm.program.ConsoleProgram;
+import acm.graphics.GOval;
+import acm.program.GraphicsProgram;
 
-public class Prosta extends ConsoleProgram {
+public class Prosta extends GraphicsProgram {
+	private static final int RADIUS = 50;
+	private static final int V_Y = 5;
+	private static final int DELAY = 20;
+	private GOval circle;
+
 	public void run() {
-		int a = readInt("Enter positive number: ");
-		while (a < 0) {
-			println("number is negative!");
-			a = readInt("Enter positive number: ");
+		circle = new GOval(2 * RADIUS, 2 * RADIUS);
+		circle.setFilled(true);
+
+		addMouseListeners();
+
+		// while loop should always be in run(not in listener methods)
+		while (true) {
+			circle.move(0, V_Y);
+			pause(DELAY);
 		}
 	}
-		
-}
 
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		add(circle, e.getX() - RADIUS, e.getY() - RADIUS);
+	}
+}
 
