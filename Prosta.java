@@ -17,7 +17,7 @@ public class Prosta extends ConsoleProgram {
 		String gvarama = "alo";
 		
 		StringTokenizer token = new StringTokenizer(tavkela, "r");
-		println(token);
+		println(tavkela);
 		
 //		if (!tavkela.equals(gvarama)) {
 //			println("hallo");
