@@ -12,7 +12,7 @@ public class Problem50 extends ConsoleProgram {
 //			String token = tokenizer.nextToken();
 //			count++;
 //		}
-		println(tokenizer);
+		println(text);
 		
 	}
 
