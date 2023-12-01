@@ -16,16 +16,20 @@ public class Problem46a extends ConsoleProgram {
 		char more = text.charAt(0);
 		
 		for (int i = 0; i < text.length(); i++) {
+			if (prev > now) {
+				more = text.charAt(i);
+			}
 			if (now > prev) {
 			now = prev;
+			now = 0;
 			}
 			if (more == text.charAt(i)) {
 				now += 1;
 			}
-			if (now > prev) {
-				more = text.charAt(i);
-			}
+			
+			
 		}
+		return more;
 			
 	}
 
