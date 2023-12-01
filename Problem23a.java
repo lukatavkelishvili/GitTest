@@ -5,8 +5,10 @@ import acm.program.ConsoleProgram;
 
 public class Problem23a extends ConsoleProgram {
 	public void run() {
+		while (true) {
 		int n = readInt("Enter number: ");
 		println(sumN(n));
+		}
 		
 	}
 	private int sumN(int n) {
