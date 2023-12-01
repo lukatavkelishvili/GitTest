@@ -18,7 +18,7 @@ public class Problem28 extends ConsoleProgram {
 				b += 1;
 			}
 		}
-		println("In your list even are: ");
+		println("In your list even are: " + b);
 	}
 
 }
