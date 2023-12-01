@@ -20,7 +20,7 @@ public class Prosta extends ConsoleProgram {
 //			println("naxui");
 //		}
 		
-		tavkela.toUpperCase();
+		tavkela = tavkela.toUpperCase();
 		println(tavkela);
 		
 		
