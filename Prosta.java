@@ -14,11 +14,14 @@ public class Prosta extends ConsoleProgram {
 		String tavkela = "alo";
 		String gvarama = "alo";
 		
-		if (!tavkela.equals(gvarama)) {
-			println("hallo");
-		}else {
-			println("naxui");
-		}
+//		if (!tavkela.equals(gvarama)) {
+//			println("hallo");
+//		}else {
+//			println("naxui");
+//		}
+		
+		tavkela.toUpperCase();
+		println(tavkela);
 		
 		
 	}
