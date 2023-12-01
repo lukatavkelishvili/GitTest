@@ -11,7 +11,7 @@ public class Problem41 extends GraphicsProgram {
 	public void run() {
 		addMouseListeners();
 	}
-	public void MouseMoved(MouseEvent e) {
+	public void MouseClicked(MouseEvent e) {
 		addCircle(e.getX(), e.getY());
 	}
 	public void addCircle(double x, double y) {
