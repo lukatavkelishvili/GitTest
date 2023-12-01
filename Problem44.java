@@ -14,8 +14,10 @@ public class Problem44 extends GraphicsProgram {
 		circle = new GOval(2 * RADIUS, 2 * RADIUS);
 		circle.setFilled(true);
 		addMouseListeners();
+		while (true) {
 		circle.move(0, V_Y);
 		pause(DELAY);
+		}
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
