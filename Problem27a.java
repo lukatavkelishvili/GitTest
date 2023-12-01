@@ -7,7 +7,7 @@ public class Problem27a extends ConsoleProgram {
 		int n = readInt("Enter first number: ");
 		int m = readInt("Enter second number: ");
 		int power = numbersPower(n, m);
-		println(power);
+		println("numbers' power is: " + power);
 	}
 	
 	private int numbersPower(int n, int m) {
