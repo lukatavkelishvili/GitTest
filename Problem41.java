@@ -12,7 +12,7 @@ public class Problem41 extends GraphicsProgram {
 		addMouseListeners();
 	}
 	@Override
-	public void mouseMoved(MouseEvent e) {
+	public void mouseDragged(MouseEvent e) {
 		addCircle(e.getX(), e.getY());
 	}
 	private void addCircle(double x, double y) {
