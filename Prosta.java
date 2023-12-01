@@ -9,7 +9,7 @@ public class Prosta extends ConsoleProgram {
 			reversedText = text.charAt(i) + reversedText;
 			
 		}
-		println(reversedText);
+		println("Your reversed text is: " + reversedText);
 	}
 }
 
