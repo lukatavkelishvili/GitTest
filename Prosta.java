@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 import acm.program.ConsoleProgram;
 
 public class Prosta extends ConsoleProgram {
@@ -11,8 +13,11 @@ public class Prosta extends ConsoleProgram {
 //		}
 //		println("Your reversed text is: " + reversedText);
 		
-		String tavkela = "alo";
+		String tavkela = "iyo arabets rostani mas saxlshi qonda bostani";
 		String gvarama = "alo";
+		
+		StringTokenizer token = new StringTokenizer(tavkela);
+		println(token);
 		
 //		if (!tavkela.equals(gvarama)) {
 //			println("hallo");
@@ -20,9 +25,9 @@ public class Prosta extends ConsoleProgram {
 //			println("naxui");
 //		}
 		
-		tavkela = tavkela.toUpperCase();
-		println(tavkela);
-		
+//		tavkela = tavkela.compareTo(gvarama);
+//		println(tavkela);
+//		
 		
 	}
 		
