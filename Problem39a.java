@@ -17,7 +17,7 @@ public class Problem39a extends GraphicsProgram {
 		add(circle);
 		
 		while (x <= getWidth() - 2 * RADIUS) {
-			move(5, 0);
+			circle.move(5, 0);
 			pause(20);
 		}
 		
