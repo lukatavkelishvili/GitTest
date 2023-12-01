@@ -11,10 +11,10 @@ public class Problem41 extends GraphicsProgram {
 	public void run() {
 		addMouseListeners();
 	}
-	public void MouseClicked(MouseEvent e) {
+	public void MouseMoved(MouseEvent e) {
 		addCircle(e.getX(), e.getY());
 	}
-	public void addCircle(double x, double y) {
+	private void addCircle(double x, double y) {
 		GOval circle = new GOval(RADIUS * 2, RADIUS * 2);
 		circle.setFilled(true);
 		add(circle, x - RADIUS, y - RADIUS);
