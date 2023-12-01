@@ -14,7 +14,7 @@ public class Problem45a extends ConsoleProgram {
 				a += 1;
 			}
 		}
-		println("In your text your symbol is repetited " + a + " times.");
+		println("In your text your symbol is repetited ");
 	}
 
 }
