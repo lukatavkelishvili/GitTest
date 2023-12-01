@@ -4,18 +4,12 @@ import acm.program.ConsoleProgram;
 
 public class Prosta extends ConsoleProgram {
 	public void run() {
-		int a = readPositiveInt();
-		println(a);
-		
-	}
-		private int readPositiveInt() {
-			if (readInt() > 0) {
-				return readInt("Enter Positive number: ");
-			}else {
-				println("Your number is negative!");
-				return readInt("Enter Positive number: ");
-			}
+		int a = readInt("Enter positive number: ");
+		while (a < 0) {
+			println("number is negative!");
+			a = readInt("Enter positive number: ");
 		}
+	}
 		
 }
 
