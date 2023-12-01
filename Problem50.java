@@ -9,7 +9,7 @@ public class Problem50 extends ConsoleProgram {
 		StringTokenizer tokenizer = new StringTokenizer(text, " ");
 		int count = 0;
 		while (tokenizer.hasMoreTokens()) {
-			
+			String token = tokenizer.nextToken();
 			count++;
 		}
 		println(count);
