@@ -14,7 +14,7 @@ public class Problem28 extends ConsoleProgram {
 			if (a <= 0) {
 				println("You should enter only positive number!");
 			}
-			if (b % 2 == 0) {
+			if (a % 2 == 0) {
 				b += 1;
 			}
 		}
