@@ -7,8 +7,9 @@ public class Prosta extends ConsoleProgram {
 		String reversedText = "";
 		for (int i = 0; i < text.length(); i++) {
 			reversedText = text.charAt(i) + reversedText;
-			println(reversedText);
+			
 		}
+		println(reversedText);
 	}
 }
 
