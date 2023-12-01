@@ -6,7 +6,7 @@ import acm.graphics.GOval;
 import acm.program.GraphicsProgram;
 
 public class Problem39a extends GraphicsProgram {
-	private static final int RADIUS = 100;
+	private static final int RADIUS = 30;
 	public void run() {
 		
 		double x = 0;
