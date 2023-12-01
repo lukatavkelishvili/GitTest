@@ -20,7 +20,7 @@ public class Problem44 extends GraphicsProgram {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		add(circle, e.getX() + RADIUS, e.getY() + RADIUS);
+		add(circle, e.getX() - RADIUS, e.getY() - RADIUS);
 		
 	}
 	
