@@ -19,7 +19,6 @@ public class Problem34a extends GraphicsProgram {
 			circle.setColor(color);
 			
 			add(circle);
-			pause(20);
 			}
 	}
 
