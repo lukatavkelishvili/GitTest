@@ -26,10 +26,13 @@ public class Problem36 extends ConsoleProgram {
 			boolean isHead = rgen.nextBoolean();
 			if (isHead) {
 				times += 1;
+				if (times == 3) {
+					break;
+				}
+			}else {
+				times = 0;
 			}
-			if (times == 3) {
-				break;
-			}
+			
 		}
 		return flipNums;
 	}
