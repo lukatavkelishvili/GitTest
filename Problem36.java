@@ -22,7 +22,7 @@ public class Problem36 extends ConsoleProgram {
 		int flipNums = 0;
 		int times = 0;
 		while (true) {
-			times++;
+			flipNums++;
 			boolean isHead = rgen.nextBoolean();
 			if (isHead) {
 				times += 1;
