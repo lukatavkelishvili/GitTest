@@ -14,11 +14,11 @@ public class Problem38 extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	public void run() {
 		while (money > 0) {
-			int currMoney = readInt("Enter money to play");
+			int currMoney = readInt("Enter money to play: ");
 			int num = readInt("Enter number from 0 to 36: ");
 			if (currMoney > money || currMoney < 0) {
 				println("Enter valid number of money!");
-				currMoney = readInt("Enter money to play");
+				currMoney = readInt("Enter money to play: ");
 			}
 			if (num < 0 || num > 36) {
 				println("Enter valid number!");
