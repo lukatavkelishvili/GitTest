@@ -12,7 +12,7 @@ public class Problem35a extends ConsoleProgram {
 			int currFlips = experiment();
 			sumFlips += currFlips;
 		}
-		double numOfFlips = sumFlips / EXP;
+		double numOfFlips = (double)sumFlips / EXP;
 		println("Number of flips are: " + numOfFlips);
 	}
 	
