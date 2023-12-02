@@ -19,6 +19,7 @@ public class Problem35a extends ConsoleProgram {
 	private int experiment() {
 		int result = 0;
 		while (true) {
+			result++;
 			boolean isHead = rgen.nextBoolean();
 			if (isHead) {
 				break;
