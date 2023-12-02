@@ -15,11 +15,12 @@ public class Problem38 extends ConsoleProgram {
 	public void run() {
 		while (money > 0) {
 			int currMoney = readInt("Enter money to play: ");
-			int num = readInt("Enter number from 0 to 36: ");
 			if (currMoney > money || currMoney < 0) {
 				println("Enter valid number of money!");
 				currMoney = readInt("Enter money to play: ");
 			}
+			
+			int num = readInt("Enter number from 0 to 36: ");
 			if (num < 0 || num > 36) {
 				println("Enter valid number!");
 				num = readInt("Enter number from 0 to 36: ");
