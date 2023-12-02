@@ -4,7 +4,7 @@ import acm.program.ConsoleProgram;
 
 public class Problem32 extends ConsoleProgram {
 	public void run() {
-		for (int i = 2; i <= 100000; i++) {
+		for (int i = 2; i <= 1000000; i++) {
 			if (isPrime(i)) {
 				println(i);
 			}
