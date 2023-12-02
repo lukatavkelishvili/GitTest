@@ -1,4 +1,23 @@
+import acm.program.ConsoleProgram;
 
-public class Problem32 {
+//დაწერეთ პროგრამა რომელიც იპოვის და დაბეჭდავს 1000000 მდე ყველა მერტივ რიცხვს
+
+public class Problem32 extends ConsoleProgram {
+	public void run() {
+		for (int i = 2; i <= 100000; i++) {
+			if (isPrime(i)) {
+				println(i);
+			}
+		}
+	}
+
+	private boolean isPrime(int i) {
+		for (int j = 2; j < i; j++) {
+			if (i % j == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
