@@ -15,8 +15,8 @@ public class Prosta extends GraphicsProgram {
 				if (i + j % 2 == 1) {
 					a.setFilled(true);
 				}
-				double x = i * length;
-				double y = j * length;
+				double x = j * length;
+				double y = i * length;
 				add(a);
 				
 			}
