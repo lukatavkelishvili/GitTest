@@ -8,11 +8,11 @@ public class Problem37 extends ConsoleProgram {
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	public void run() {
 		int a = readInt("Enter num between 0 to 36: ");
-		if (a > 36 || a < 0) {
+		if (a > 1 || a < 0) {
 			println("Enter valid number! ");
 			a = readInt("Enter num between 0 to 36: ");
 		}
-		int result = rgen.nextInt(0, 37);
+		int result = rgen.nextInt(0, 2);
 		println("Chosen number is: " + result);
 		if (result == a) {
 			println("You won!");
