@@ -24,7 +24,7 @@ public class Problem36 extends ConsoleProgram {
 		
 		while (true) {
 			flipNums++;
-			boolean isHead = rgen.nextBoolean(0.4);
+			boolean isHead = rgen.nextBoolean();
 			if (isHead) {
 				times += 1;
 				if (times == 3) {
