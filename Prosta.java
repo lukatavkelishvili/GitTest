@@ -12,12 +12,11 @@ public class Prosta extends GraphicsProgram {
 			for (int j = 0; j < 8; j++) {
 				double length = Math.min(getWidth(), getHeight()) / 8;
 				GRect a = new GRect(length, length);
-				if (i + j % 2 == 1) {
-					a.setFilled(true);
-				}
+				
+				a.setFilled(i + j % 2 == 1);
 				double x = j * length;
 				double y = i * length;
-				add(a);
+				add(a, x, y);
 				
 			}
 		}
