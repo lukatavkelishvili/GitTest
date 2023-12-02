@@ -1,30 +1,32 @@
-import java.awt.event.MouseEvent;
 
-import acm.graphics.GOval;
-import acm.program.GraphicsProgram;
+//35. თქვენი ამოცანაა გააკეთოთ მონეტის აგდების სიმულაციები და დათვალოთ საშუალოდ
+//რამდენჯერ უნდა ავაგდოთ მონეტა რათა ამოვიდეს ბორჯღალო
+import acm.program.ConsoleProgram;
+import acm.util.RandomGenerator;
 
-public class Prosta extends GraphicsProgram {
-	private static final int RADIUS = 50;
-	private static final int V_Y = 5;
-	private static final int DELAY = 20;
-	private GOval circle;
+public class Prosta extends ConsoleProgram {
+	private static final int NUM_EXPERIMENTS = 1000000;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
 
 	public void run() {
-		circle = new GOval(2 * RADIUS, 2 * RADIUS);
-		circle.setFilled(true);
-
-		addMouseListeners();
-
-		// while loop should always be in run(not in listener methods)
-		while (true) {
-			circle.move(0, V_Y);
-			pause(DELAY);
+		double sumFlips = 0;
+		for (int i = 0; i < NUM_EXPERIMENTS; i++) {
+			int currFlips = holdExperiment(); // result of 1 experiment
+			sumFlips += currFlips;
 		}
+		double avgFlips = sumFlips / NUM_EXPERIMENTS;
+		println("Avg number of flips is: " + avgFlips);
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		add(circle, e.getX() - RADIUS, e.getY() - RADIUS);
+	private int holdExperiment() {
+		int numFlips = 0;
+		while (true) {
+			numFlips++;
+			boolean isHeads = rgen.nextBoolean();
+			if (isHeads) {
+				break;
+			}
+		}
+		return numFlips;
 	}
 }
-
