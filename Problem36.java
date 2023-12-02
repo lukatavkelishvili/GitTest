@@ -21,9 +21,10 @@ public class Problem36 extends ConsoleProgram {
 	private int exp() {
 		int flipNums = 0;
 		int times = 0;
+		
 		while (true) {
 			flipNums++;
-			boolean isHead = rgen.nextBoolean();
+			boolean isHead = rgen.nextBoolean(0.4);
 			if (isHead) {
 				times += 1;
 				if (times == 3) {
