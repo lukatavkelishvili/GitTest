@@ -25,6 +25,8 @@ public class Problem43 extends GraphicsProgram {
 	
 	public void mouseDragged(MouseEvent e) {
 		circle.move(e.getX() - prevX, e.getY() - prevY);
+		prevX = e.getX();
+		prevY = e.getY();
 	}
 	
 
