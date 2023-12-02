@@ -30,6 +30,7 @@ public class Prosta extends GraphicsProgram {
 		GObject obj = getElementAt(e.getX(), e.getY());
 		if (obj != null) {
 			obj.move(e.getX(), e.getY());
+			pause(20);
 		}
 		
 	}
